@@ -10,6 +10,8 @@ spring:
     platform: h2 #指定数据源类型
     schema: classpath:schema.sql #指定h2数据库的建表语句
     data: classpath:data.sql  #指定h2数据库的数据脚本
+  application:
+    name: microservice-provider-user  #  指定注册到Eureka的应用的名字，建议全部小写
 logging:
   level:
     root: INFO
@@ -17,3 +19,12 @@ logging:
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
     com.artisan: DEBUG
+    
+#eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true  # 起码点击后 会看到ip信息
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}

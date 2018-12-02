@@ -2,3 +2,15 @@ server:
   port: 7901
 user: 
   userServicePath: http://localhost:7900/user/
+  
+spring:
+  application:
+    name: micorservice-consumer-movie  
+#eureka
+eureka: 
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
