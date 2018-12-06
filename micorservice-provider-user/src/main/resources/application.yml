@@ -1,15 +1,11 @@
 server:
-  port: 7900
+  port: 8900
 spring:
-  jpa:
-    generate-ddl: false
-    show-sql: true
-    hibernate:
-      ddl-auto: none
-  datasource:    #指定数据源
-    platform: h2 #指定数据源类型
-    schema: classpath:schema.sql #指定h2数据库的建表语句
-    data: classpath:data.sql  #指定h2数据库的数据脚本
+  datasource:
+    url: jdbc:mysql://localhost:3306/artisan?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
   application:
     name: microservice-provider-user  #  指定注册到Eureka的应用的名字，建议全部小写
 logging:
