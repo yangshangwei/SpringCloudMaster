@@ -22,7 +22,7 @@
 		<module>micorservice-provider-user</module>
 		<module>micorservice-consumer-movie</module>
 		<module>microservice-discovery-eureka</module>
-		<module>micorservice-consumer-movie-ribbon</module>
+   	    <module>micorservice-consumer-movie-ribbon</module>
   </modules>
 
 	<parent>
