@@ -1,5 +1,8 @@
 package com.artisan.micorservice.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
@@ -11,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
 import com.artisan.micorservice.model.User;
 
 import lombok.extern.slf4j.Slf4j;
+import rx.internal.schedulers.NewThreadWorker;
 
 
 @RestController
@@ -38,5 +42,18 @@ public class MovieController {
 	  return serviceInstance.getUri().toString();
   }
   
+  @GetMapping("/searchUser")
+  public User searchUser(String name ,String age ,String username) {
+	  Map<String, Object> paraMap = new HashMap<String ,Object>() {
+		  {
+			  put("name",name);
+			  put("age",age);
+			  put("username",username);
+		  }  
+	  };
+	  
+	 return  this.restTemplate.getForObject("http://microservice-provider-user/search?name={name}&age={age}&username={username}", User.class, paraMap);
+	  
+  }
   
 }

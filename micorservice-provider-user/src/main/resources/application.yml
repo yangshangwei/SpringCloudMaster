@@ -1,5 +1,5 @@
 server:
-  port: 8901
+  port: 8900
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/artisan?useUnicode=true&characterEncoding=utf-8&useSSL=true
