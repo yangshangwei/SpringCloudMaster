@@ -23,7 +23,8 @@
 		<module>micorservice-consumer-movie</module>
 		<module>microservice-discovery-eureka</module>
    	    <module>micorservice-consumer-movie-ribbon</module>
-  </modules>
+		<module>micorservice-consumer-movie-ribbon-customrule-properties</module>
+	</modules>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
