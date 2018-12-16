@@ -24,8 +24,9 @@
 		<module>microservice-discovery-eureka</module>
    	    <module>micorservice-consumer-movie-ribbon</module>
 		<module>micorservice-consumer-movie-ribbon-customrule-properties</module>
-    <module>micorservice-consumer-movie-fegin</module>
-    <module>micorservice-consumer-movie-ribbon-hystrix</module>
+  		<module>micorservice-consumer-movie-fegin</module>
+    	<module>micorservice-consumer-movie-ribbon-hystrix</module>
+    	<module>micorservice-consumer-movie-fegin-hystrix</module>
   </modules>
 
 	<parent>
