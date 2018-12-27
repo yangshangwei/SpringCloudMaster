@@ -1,0 +1,15 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: micorservice-dashboard
+
+#eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://artisan:artisan123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true  # 起码点击后 会看到ip信息
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
