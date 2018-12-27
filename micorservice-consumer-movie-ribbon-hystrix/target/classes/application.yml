@@ -14,8 +14,13 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
 
 #actuator  启用所有的监控端点 “*”号代表启用所有的监控端点，可以单独启用，例如，health，info，metrics
+#  spring boot 升为 2.0 后，为了安全，默认 Actuator 只暴露了2个端点，heath 和 info，继续
+# 访问  http://192.168.1.103:7902/actuator/metrics
 management:
   endpoints:
     web:
       exposure:
         include: "*" 
+  endpoint:
+      health:
+        show-details: ALWAYS
