@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: micorservice-dashboard
+    name: micorservice-hystrix-dashboard
 
 #eureka
 eureka:

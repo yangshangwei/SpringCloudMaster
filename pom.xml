@@ -27,7 +27,7 @@
   		<module>micorservice-consumer-movie-fegin</module>
     	<module>micorservice-consumer-movie-ribbon-hystrix</module>
     	<module>micorservice-consumer-movie-fegin-hystrix</module>
-    <module>micorservice-consumer-movie-ribbon-hystrix-dashboard</module>
+   		 <module>micorservice-hystrix-dashboard</module>
   </modules>
 
 	<parent>
