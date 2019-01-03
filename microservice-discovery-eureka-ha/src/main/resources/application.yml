@@ -1,0 +1,40 @@
+spring: 
+  # 注册到eureka上的微服务名称
+  application: 
+    name: microservice-discovery-eureka-ha  
+      
+---  
+spring:
+  # 指定profiles为peer1
+  profiles: peer1
+
+server:
+  port: 8761
+  
+eureka:
+  instance:
+    # 当profiles为peer1，hostname是peer1 ，以jar包的形式启动的时候通过spring.profiles.active参数指定使用哪个配置文件启动
+    hostname: peer1
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+  client:
+    serviceUrl:
+      # 将自己注册到peer2这个Eureka上
+      defaultZone: http://peer2:8762/eureka/
+   
+---
+spring:
+  # 指定profiles为peer2，以jar包的形式启动的时候通过spring.profiles.active参数指定使用哪个配置文件启动
+  profiles: peer2
+# 端口  
+server:
+  port: 8762
+# Eureka 
+eureka:
+  instance:
+    # 当profiles为peer2，hostname是peer2
+    hostname: peer2
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+  client:
+    serviceUrl:
+      # 将自己注册到peer1这个Eureka上
+      defaultZone: http://peer1:8761/eureka/

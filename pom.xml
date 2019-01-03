@@ -28,6 +28,8 @@
     	<module>micorservice-consumer-movie-ribbon-hystrix</module>
     	<module>micorservice-consumer-movie-fegin-hystrix</module>
    		 <module>micorservice-hystrix-dashboard</module>
+    <module>microservice-discovery-eureka-ha</module>
+    <module>microservice-discovery-eureka-ha3</module>
   </modules>
 
 	<parent>
