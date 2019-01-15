@@ -22,3 +22,12 @@ management:
   endpoint:
       health:
         show-details: ALWAYS
+
+zuul: 
+  routes:
+    microservice-provider-user: /userprovider/**
+
+logging:
+  level:
+    com.netflix: DEBUG  # 将 com.netflix包的日志级别设置为debug,将打印zuul的转发细节
+    

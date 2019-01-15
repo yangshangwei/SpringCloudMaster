@@ -37,4 +37,18 @@ public class UserController {
 	  log.info("姓名：{} , 年龄 {}" ,user.getUsername() , user.getAge());
 	  return user;
   }
+  
+  @GetMapping("/api/{id}")
+  public User findById2(@PathVariable Long id) {
+	  log.info("匹配到了 Controller层的/api/{id}");
+	  log.info("provider的UserController中的findById2方法 ");
+	  User user = new User();
+      user.setId(id);
+      
+      User user2 = new User();
+      user2.setName("no this user");
+      // 我们使用的spring boot2.1.1版本中关联使用的spring data jpa不再支持findone(id)方法,改成如下写法
+      return userRepository.findOne(Example.of(user)).orElse(user2); 
+  }
+  
 }

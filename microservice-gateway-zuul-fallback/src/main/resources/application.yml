@@ -1,9 +1,9 @@
 server:
-  port: 4534
+  port: 4535
   
 spring:
   application:
-    name: microservice-gateway-zuul
+    name: microservice-gateway-zuul-fallback
 
 eureka:
   client:
