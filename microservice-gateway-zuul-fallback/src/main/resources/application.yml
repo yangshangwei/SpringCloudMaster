@@ -26,6 +26,7 @@ management:
 zuul: 
   routes:
     microservice-provider-user: /userprovider/**
+    micorservice-consumer-movie-ribbon: /usermovie/**
 
 logging:
   level:

@@ -19,7 +19,9 @@ public class MyFallbackProvider  implements FallbackProvider {
     @Override
     public String getRoute() {
     	// 为哪个微服务提供提供回退服务，返回微服务的名字,必须和注册在Eureka Server上的名字一致
-        return "microservice-provider-user";
+        // return "microservice-provider-user";
+        // 为全部微服务提供回退服务
+        return "*";
     }
 
     @Override
