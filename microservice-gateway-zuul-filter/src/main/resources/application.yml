@@ -1,9 +1,9 @@
 server:
-  port: 4534
+  port: 4536
   
 spring:
   application:
-    name: microservice-gateway-zuul
+    name: microservice-gateway-zuul-filter
 
 eureka:
   client:
@@ -26,6 +26,10 @@ management:
 zuul: 
   routes:
     microservice-provider-user: /userprovider/**
+  PreRequestZuulFilter: 
+    pre:
+      disable: true
+
 logging:
   level:
     com.netflix: DEBUG  # 将 com.netflix包的日志级别设置为debug,将打印zuul的转发细节

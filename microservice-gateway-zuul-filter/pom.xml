@@ -9,24 +9,31 @@
 		<artifactId>microservice-spring-cloud</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>microservice-gateway-zuul</artifactId>
-	<name>microservice-gateway-zuul</name>
+	<artifactId>microservice-gateway-zuul-filter</artifactId>
+	<name>microservice-gateway-zuul-filter</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
-		
-		 <!-- eureka client 依赖  . Eureka不是必须的 ,在没有注册中心的情况下，也可以使用zuul-->
+
+		<!-- eureka client 依赖 . Eureka不是必须的 ,在没有注册中心的情况下，也可以使用zuul -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-	
+
 		<!-- zuul 依赖 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+		</dependency>
+
+		<!-- spring boot 热启动 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
 		</dependency>
 
 	</dependencies>

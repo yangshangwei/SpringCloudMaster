@@ -32,6 +32,7 @@
     <module>microservice-discovery-eureka-ha3</module>
     <module>microservice-gateway-zuul</module>
     <module>microservice-gateway-zuul-fallback</module>
+    <module>microservice-gateway-zuul-filter</module>
   </modules>
 
 	<parent>
