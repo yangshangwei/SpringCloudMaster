@@ -1,0 +1,16 @@
+# application name
+spring:
+  application:
+    # 对应 config server所获取的配置文件的{application}
+    name: microservice-artisan
+  # cloud
+  cloud:
+    config:
+      # config server的地址，默认为http://localhost:8888
+      uri: http://localhost:9764/
+      # profile 对应的config server所获取的配置文件中的{profile}
+      # profile: prod
+      profile: dev
+      # 指定git仓库的分支，对应config server说获取的配置文件的{lable}
+      # label: master
+      label: config-v2

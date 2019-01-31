@@ -28,8 +28,15 @@ public class PreRequestZuulFilter  extends ZuulFilter{
 	
 	@Override
 	public Object run() throws ZuulException {
-		HttpServletRequest request =    RequestContext.getCurrentContext().getRequest();
+		RequestContext ctx = RequestContext.getCurrentContext();
+		HttpServletRequest request = ctx.getRequest();
 		System.out.println("pre filter, 请求路径："  +request.getRequestURI());
+		String token = request.getParameter("accessToken");
+		if (token == null) {
+			ctx.setSendZuulResponse(false);
+			ctx.setResponseBody("no accesss");
+			ctx.setResponseStatusCode(401);
+		}
 		return null;
 	}
 

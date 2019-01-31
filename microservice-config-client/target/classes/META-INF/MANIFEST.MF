@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: microservice-config-client
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: yangshangwei
+Implementation-Vendor-Id: com.artisan
+Build-Jdk: 1.8.0_191
+Implementation-URL: http://maven.apache.org/microservice-config-client
+Created-By: Maven Integration for Eclipse
+

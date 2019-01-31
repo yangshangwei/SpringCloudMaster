@@ -1,0 +1,19 @@
+#port
+server:
+  port: 9764
+  
+# application name
+spring:
+  application:
+    name: microservice-config-server
+  # cloud
+  cloud:
+    config:
+      server:
+        git:
+          # git 仓库地址
+          uri: https://github.com/yangshangwei/spring-cloud-config-center
+          # 用户名
+          username: 
+          # 密码  
+          password: 

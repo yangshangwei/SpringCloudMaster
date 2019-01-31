@@ -26,9 +26,9 @@ management:
 zuul: 
   routes:
     microservice-provider-user: /userprovider/**
-  PreRequestZuulFilter: 
-    pre:
-      disable: true
+#  PreRequestZuulFilter: 
+#    pre:
+#      disable: true
 
 logging:
   level:
